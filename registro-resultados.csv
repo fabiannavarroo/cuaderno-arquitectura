@@ -1,0 +1,12 @@
+Laboratorio,Caso,Repeticion,Nodo_o_version,Modelo_o_CPUs_reservadas,N,Iteraciones,Fraccion_secuencial,Hilos,Tiempo_sec_s,Tiempo_par_s,Tiempo_total_s,Task_clock_ms,Tiempo_perf_s,Energia_pkg_J,Ciclos,Instrucciones_ejecutadas,CPI,IPC,Stalls,Flushes,Registros_iniciales,Registros_finales,Notas
+1,Lab1_1_hilo,,,,,,,,,,,,,,,,,,,,,,
+1,Lab1_4_hilos,,,,,,,,,,,,,,,,,,,,,,
+1,Lab1_8_hilos,,,,,,,,,,,,,,,,,,,,,,
+2,code1_single_cycle,,,,,,,,,,,,,,,,,,,,,,
+2,code1_sin_forwarding,,,,,,,,,,,,,,,,,,,,,,
+2,code1_con_forwarding,,,,,,,,,,,,,,,,,,,,,,
+2,code2_con_forwarding,,,,,,,,,,,,,,,,,,,,,,
+2,code2_desenrollado,,,,,,,,,,,,,,,,,,,,,,
+2,code3_sin_forwarding,,,,,,,,,,,,,,,,,,,,,,
+2,code3_con_forwarding,,,,,,,,,,,,,,,,,,,,,,
+2,code3_reordenado,,,,,,,,,,,,,,,,,,,,,,

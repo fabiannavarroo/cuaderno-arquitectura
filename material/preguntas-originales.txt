@@ -1,0 +1,199 @@
+Nivel I. Conceptos esenciales (1–20)
+1. Define ISA y microarquitectura con una frase y explica si dos procesadores pueden compartir ISA y diferir en
+rapidez.
+2. ¿Cuáles son las tres revoluciones arquitectónicas que presentan las diapositivas? ¿Qué problema resuelve
+cada una?
+3. Diferencia ILP, TLP y RLP con un ejemplo propio de cada uno.
+4. ¿Qué caracteriza a SISD, SIMD y MIMD? ¿Por qué Flynn no basta para describir una máquina?
+5. ¿Qué prioridad distingue a un móvil frente a un servidor?
+6. ¿Es la Ley de Moore una ley física? ¿Por qué no se puede aplicar una tasa de duplicación fija a todas las
+décadas?
+7. Diferencia latencia de ancho de banda. Da un caso de alta tasa de transferencia pero respuesta lenta.
+8. Diferencia potencia de energía. ¿Una CPU de más vatios puede terminar gastando menos julios?
+9. ¿Qué es TDP y por qué no debes identificarlo con potencia máxima exacta?
+10. ¿En qué se diferencian clock gating, power gating y DVFS?
+11. ¿Qué es yield? ¿Por qué importa al diseñar chips grandes?
+12. Distingue tiempo de respuesta, tiempo de CPU y throughput.
+13. ¿Qué mide un benchmark? ¿Por qué conviene utilizar una suite como SPEC CPU 2017?
+14. Define speedup. ¿Qué significa S<1?
+15. En Amdahl, ¿qué representan p y 1−p? ¿Qué ocurre si solo mejoras una fracción muy pequeña?
+16. ¿Qué es strong scaling y en qué se diferencia de weak scaling?
+17. Define CPI; ¿por qué una CPU de frecuencia más alta puede ser más lenta?
+18. Di las cinco etapas clásicas IF, ID, EX, MEM y WB y la responsabilidad de cada una.
+19. Distingue stall y flush, incluyendo qué parte de la CPU puede ocasionarlos.
+20. Define qué es un bloque básico y cómo se relaciona con el ILP disponible.
+ARQUITECTURA DE COMPUTADORES / REPASO TEÓRICO
+MANUAL DE ESTUDIO · Material elaborado a partir de 10 presentaciones | 28
+Nivel II. Explica mecanismos, no solo definiciones (21–45)
+21. ¿Por qué el pipeline aumenta la productividad sin garantizar menos latencia individual?
+22. ¿Para qué se necesitan registros IF/ID, ID/EX, EX/MEM y MEM/WB?
+23. Explica un riesgo estructural sin mencionar ningún registro leído o escrito.
+24. Escribe un ejemplo de RAW y explica por qué es dependencia verdadera.
+25. Escribe un ejemplo de WAR y justifica por qué es dependencia de nombre.
+26. Escribe un ejemplo de WAW y explica cuál podría ser el resultado incorrecto.
+27. ¿Por qué un pipeline escalar en orden no suele sufrir WAR/WAW como bloqueos, pero la ejecución fuera de
+orden sí?
+28. ¿Qué gana forwarding y por qué no elimina todos los riesgos RAW?
+29. ¿Por qué lw r1,0(r2) seguido de add r3,r1,r4 necesita normalmente un stall con forwarding?
+30. ¿Por qué separar cachés de instrucciones y datos elimina un riesgo estructural?
+31. ¿De qué depende la penalización de una bifurcación?
+32. Explica freeze, predict-not-taken y predict-taken con su escenario de acierto y fallo.
+33. ¿Por qué la política «siempre tomada» puede ser poco útil cuando condición y destino se conocen juntos al
+final de ID?
+34. ¿Qué es exactamente una delay slot y cuándo se inserta un NOP?
+35. ¿Por qué la predicción con 1 bit puede fallar dos veces por ciclo de un bucle repetido?
+36. ¿Qué es histéresis en el predictor de 2 bits?
+37. ¿Qué es el aliasing de una BHT?
+38. Explica un predictor correlacionado ( m,n) y qué representan sus dos parámetros.
+39. ¿Cuándo puede ser mejor un predictor global que uno local y por qué existe el de torneo?
+40. ¿Qué es la planificación estática de instrucciones y qué transformaciones NO están permitidas?
+41. Enumera dos ventajas y dos inconvenientes del desenrollamiento de bucles.
+42. Explica por qué Marcador permite ejecutar fuera de orden sin emitir libremente fuera de orden.
+43. ¿En qué etapa bloquea cada riesgo RAW/WAR/WAW en Marcador y qué evento lo desbloquea?
+44. ¿Cómo elimina Tomasulo WAR y WAW sin suprimir RAW?
+45. ¿Qué hacen las estaciones de reserva, el CDB y el ROB? No confundas terminar con retirar.
+Nivel III. Preguntas-trampa y cálculo rápido (46–65)
+46. Si el tiempo pasa de 100 s a 50 s, ¿qué speedup hay, qué porcentaje aumenta el rendimiento y qué porcentaje
+baja el tiempo?
+47. Amdahl: 90 % del tiempo mejorable cinco veces. ¿Aceleración global? ¿Se mejora el programa cinco veces?
+48. Si solo es mejorable el 75 % del tiempo, ¿cuál es el límite de Amdahl?
+49. Un programa estaba adaptado a 8 núcleos y ahora usa 32 iguales. Bajo paralelismo ideal, ¿qué aceleración
+tiene esa parte respecto a la base anterior?
+50. Gustafson: p=0 ,8 y N=10. ¿Por qué su resultado no coincide con Amdahl?
+51. Un programa tiene 60 % instrucciones CPI 2 y 40 % CPI 5. Calcula CPI medio. ¿Es el mismo porcentaje que
+fracción de tiempo?
+52. Para IC=109
+, CPI=2 y 2 GHz, ¿cuánto tarda?
+53. ¿Cuántos ciclos necesita un pipeline ideal de 7 etapas para 10 instrucciones sin riesgos?
+54. Un pipeline ideal tiene CPI=1 y en promedio suma 0,3 ciclos de paradas por instrucción. ¿CPI real?
+55. Voltaje al 90 % y frecuencia al 80 %: ¿qué fracción de potencia dinámica queda si no cambian otros factores?
+56. Sistema A usa 150 W durante 2 s; B, 100 W durante 4 s. ¿Cuál consume menos energía y por qué?
+ARQUITECTURA DE COMPUTADORES / REPASO TEÓRICO
+MANUAL DE ESTUDIO · Material elaborado a partir de 10 presentaciones | 29
+57. En Marcador: I1 lee F4 en RO y I2 escribe F4. ¿En qué etapa podría esperar I2 y hasta qué etapa debe llegar
+I1?
+58. En Marcador: I1 e I2 escriben F6. ¿Dónde espera la segunda si I1 aún no ha escrito?
+59. En Tomasulo: I2 consume un dato que produce I1. ¿Qué permite a I2 emitirse sin disponer del dato
+inmediatamente?
+60. ¿Un store previo y un load posterior a la misma dirección dejan de depender porque Tomasulo renombre los
+registros?
+61. Una BHT indexada con 10 bits tiene ¿cuántas entradas? ¿Por qué aún puede haber aliasing?
+62. Predictor de dos bits en estado 11; ocurre un NT. ¿En qué estado queda y qué predice después?
+63. Para ( m,n)=( 2,2) y E=1024, ¿cuántos bits almacenan los contadores en el esquema de clase?
+64. En el ejemplo MIPS R4000, ¿qué política de las tres tiene menor coste medio en CPI y cuánto vale?
+65. Si en un bucle se mueve la actualización del puntero addi t1,t1,-8 antes de un store que usaba 0(t1), ¿qué
+desplazamiento conserva la dirección anterior?
+Solucionario razonado
+1. ISA es el comportamiento visible al programa; microarquitectura son los mecanismos físicos/lógicos que la ejecutan.
+Sí, dos procesadores pueden compartir ISA y tener rendimiento distinto por diseño de pipeline, cachés o predicción.
+2. Integración del microprocesador (abaratamiento y difusión), explotación del ILP (más instrucciones por ciclo dentro
+de una ejecución) y paralelismo explícito (hilos, vectores y núcleos cuando crecer frecuencia/ILP dejó de ser tan
+rentable).
+3. ILP: dos operaciones independientes de un hilo; TLP: dos hilos en dos núcleos; RLP: dos peticiones diferentes a un
+servidor. La granularidad del trabajo es distinta.
+4. SISD: un flujo de instrucciones/datos; SIMD: una instrucción para varios datos; MIMD: varios flujos de instrucciones
+y datos. Flynn no determina por sí sola ni memoria ni red ni modelo de programación.
+5. Móvil: energía/autonomía, tamaño y respuesta. Servidor: throughput, disponibilidad, escalabilidad, grandes cargas
+concurrentes y coste operativo.
+6. No. Es una tendencia industrial que cambia por época: las diapositivas describen duplicaciones anuales iniciales,
+bianuales después y desaceleración posterior.
+7. Latencia = espera por resultado de una operación; ancho de banda = volumen transferido por segundo. Una
+transferencia masiva puede mover cientos de MB/s pero cada acceso individual tener una espera inicial apreciable.
+8. Potencia = J/s; energía = potencia por tiempo. Sí: terminar antes puede gastar menos energía aun usando más
+vatios. Hay que calcular E=Pt.
+9. TDP es una referencia para diseñar refrigeración. Potencia pico real, sostenida y consumo eléctrico pueden diferir
+según carga y límites del sistema.
+10. Clock gating reduce conmutación parando el reloj; power gating corta alimentación y fugas; DVFS adapta
+voltaje/frecuencia. No son intercambiables.
+11. Porcentaje de chips funcionales obtenidos de una oblea. Chips grandes pueden recoger más defectos, disminuye el
+yield y sube el coste efectivo por unidad buena.
+12. Respuesta: incluye espera y E/S; CPU: tiempo de cómputo; throughput: trabajos finalizados por unidad de tiempo.
+13. Prueba el rendimiento en una carga conocida. Una suite reúne comportamientos variados; evita que una sola
+prueba dé una conclusión engañosa.
+ARQUITECTURA DE COMPUTADORES / REPASO TEÓRICO
+MANUAL DE ESTUDIO · Material elaborado a partir de 10 presentaciones | 30
+14. S=T0 /T1. S<1 significa que el nuevo sistema tarda más: es un empeoramiento.
+15. p es la fracción de tiempo original mejorable; 1−p la parte intacta. Si p es pequeña, la mejora total será pequeña
+aunque s sea enorme.
+16. Amdahl/strong: problema fijo; Gustafson/weak: escalar el trabajo con recursos. Las bases de comparación difieren.
+17. CPI = ciclos medios por instrucción. Una frecuencia superior puede venir con más detenciones o CPI, y el producto
+CPI/f empeorar.
+18. IF captura; ID decodifica y lee fuentes; EX opera o calcula dirección; MEM accede a datos; WB escribe resultados
+en registros.
+19. Stall detiene el avance preservando instrucción y estado; flush invalida instrucciones equivocadas, típicamente tras
+predicción incorrecta.
+20. Secuencia de instrucciones sin bifurcaciones internas. Dentro suele haber pocas instrucciones independientes; se
+busca ILP entre bloques e iteraciones.
+21. Diferentes instrucciones usan etapas a la vez; terminan más instrucciones por segundo, pero cada una sigue
+atravesando todas las etapas y registros.
+22. Guardan datos y señales entre ciclos, impidiendo mezclar instrucciones y permitiendo congelar/anular etapas
+controladamente.
+23. IF y MEM compiten por una memoria única de un puerto, incluso con instrucciones sin dependencias de registros.
+24. add r1,r2,r3; sub r4,r1,r5. La resta necesita exactamente el valor producido por la suma.
+25. add r1,r2,r3; sub r2,r4,r5. La primera usa el r2 viejo, la segunda quiere darle un nuevo valor: conflicto por
+reutilización del nombre.
+26. add r1,r2,r3; sub r1,r4,r5. Si la primera termina la última sin protección, sobrescribe el resultado que debería
+dejar la segunda.
+27. La primera lee operandos en ID antes de que una posterior escriba en WB y las escrituras llegan en orden; fuera de
+orden puede invertirse ese calendario.
+28. Envía resultados internos al consumidor antes del WB convencional, pero no adelanta un dato que aún no se ha
+calculado o leído de memoria.
+29. lw entrega el dato al final de MEM; la instrucción inmediata lo necesitaría antes de tenerlo en EX. Es el load-use
+hazard clásico.
+30. IF puede usar memoria/caché de instrucciones al mismo tiempo que una carga usa la de datos, sin competir por un
+solo puerto.
+31. De cuándo se sabe condición y destino, del camino especulado, de la profundidad y de las etapas que haya que
+vaciar o detener.
+32. Freeze espera siempre; no-taken avanza secuencialmente y anula si se toma; taken intenta adelantarse al destino y
+anula si no se toma.
+33. Si hasta el final de ID no se sabe ni la condición ni el destino, no es posible captar pronto una instrucción destino
+específica.
+ARQUITECTURA DE COMPUTADORES / REPASO TEÓRICO
+MANUAL DE ESTUDIO · Material elaborado a partir de 10 presentaciones | 31
+34. Instrucción que se ejecuta siempre justo después de un salto retrasado. NOP si no existe una instrucción útil y
+segura para ocuparla.
+35. Al salir predice T pero ocurre NT; tras aprender NT, al comenzar otro bucle predice NT pero vuelve a ocurrir T.
+36. Resistencia al cambio: con 2 bits no basta siempre un fallo aislado para cambiar de T a NT o viceversa.
+37. Coincidencia de índice: dos saltos distintos comparten entrada y se «contaminan» el historial/predicción.
+38. m = resultados previos utilizados para seleccionar uno entre 2m contextos; n = bits del predictor de cada contexto.
+39. Global capta dependencias entre saltos diferentes; local, el patrón del mismo salto. El torneo aprende cuál funciona
+mejor.
+40. Reordenar independientes para tapar latencias. No se deben violar RAW/WAR/WAW relevantes, direcciones,
+excepciones ni efectos visibles.
+41. Ventajas: menos saltos por elemento y más ILP entre iteraciones. Inconvenientes: código mayor/caché de
+instrucciones y más registros; además hay que tratar restos.
+42. Emite secuencialmente, pero instrucciones independientes pueden completar RO/EX/WB antes que anteriores
+atascadas en RAW. Emisión no es ejecución.
+43. RAW espera en RO a WB del productor; WAR espera en WB a RO del lector previo; WAW espera en IS a WB del
+escritor previo.
+44. Guarda operandos o etiquetas de productor en estaciones y renombra destinos; así evita sobrescrituras de
+nombres mientras mantiene los RAW reales.
+45. Estaciones esperan y preparan operandos; CDB difunde resultados; ROB moderno retira en orden resultados
+acabados fuera de orden.
+46. S=2; rendimiento 100 % mayor; tiempo 50 % menor.
+47. S=1/( 0 ,10+0 ,90/5)=1/0 ,28≈3 ,57. No llega a 5 por el 10 % que no cambia.
+48. Smax
+=1/( 1−0 ,75)=4.
+49. 32/8=4, si se comparan sistemas con núcleos equivalentes y trabajo perfectamente repartido.
+50. SG=10−0 ,2⋅9=8 ,2. Gustafson supone ampliar el trabajo y Amdahl compara tarea fija.
+51. 0 ,6⋅2+0 ,4⋅5=3 ,2. Son porcentajes de instrucciones; la parte de tiempo consumido no sería 60/40.
+52. T=109
+⋅2/( 2⋅109 )=1 s.
+53. 7+10−1=16 ciclos.
+54. CPI=1+0 ,3=1,3.
+55. 0 ,92
+⋅0 ,8=0 ,648: queda el 64,8 % de la potencia dinámica original.
+56. A: 150⋅2=300 J; B: 100⋅ 4=400 J. A consume 100 J menos aunque tenga más vatios.
+57. I2 puede tener que esperar en WB hasta que I1 complete RO y lea F4; no espera al WB de I1 por el mero WAR.
+ARQUITECTURA DE COMPUTADORES / REPASO TEÓRICO
+MANUAL DE ESTUDIO · Material elaborado a partir de 10 presentaciones | 32
+58. IS, esperando al WB del escritor previo, porque es WAW.
+59. Una estación de reserva que conserva una etiqueta de productor; al llegar el valor por el CDB, se habilita EX.
+60. No. Hay dependencias reales por direcciones de memoria; los buffers y la desambiguación deben respetarlas.
+61. 210
+=1024 entradas. El PC puede tener más bits y varios saltos compartir algunos índices.
+62. Pasa de 11 a 10 y sigue prediciendo T.
+63. 22
+⋅2⋅1024=8192bits=8 Kbit.
+64. Predecir no tomada, con coste medio 0,38 ciclos/instrucción en ese reparto concreto.
+65. Usar -8(t1) si el puntero se ha actualizado restando 8 antes del store que antes usaba la dirección vieja.

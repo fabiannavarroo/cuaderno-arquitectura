@@ -1,0 +1,27 @@
+CUADERNO AC · ARQUITECTURA DE COMPUTADORES
+
+1. Si has descargado el ZIP, descomprímelo antes de abrir los archivos.
+2. Abre index.html con doble clic o con tu navegador habitual.
+3. La web funciona sin conexión y sin instalación. Para consultar los enlaces externos y Ripes online necesitas Internet.
+4. Elige un nivel, lee la pregunta y pulsa sobre ella o sobre «Ver respuesta». Puedes abrir varios acordeones de forma independiente. También funcionan con Tab y Enter/Espacio.
+5. La búsqueda consulta preguntas, respuestas y notas de revisión. «Todos los niveles» quita el filtro de nivel; «Restablecer filtros» aparece si no hay resultados.
+6. Marca «Ya la he repasado» para guardar el progreso en este navegador. «Solo pendientes» muestra lo que queda. Si no hay permiso de almacenamiento, las marcas duran solo la sesión; la página lo indica. El progreso no se sincroniza entre navegadores ni equipos.
+7. «Lab 1» y «Lab 2» contienen el resumen detallado, comandos, dependencias, preguntas abiertas y criterios de medida. «Notas y fuentes» explica correcciones y procedencia.
+8. «Imprimir» despliega las respuestas/apartados de la vista actual. Puedes guardar la impresión como PDF con el navegador. Para imprimir las 65 preguntas, selecciona todos los niveles y quita búsqueda y «Solo pendientes».
+9. Mantén la carpeta material y los demás archivos junto a index.html para que funcionen sus enlaces. La web de preguntas y los resúmenes están integrados en index.html; no usa bibliotecas ni fuentes externas.
+
+CONTENIDO
+- index.html: web completa y autónoma de estudio.
+- resumen-laboratorios.md: resumen detallado en texto editable.
+- registro-resultados.csv: plantilla vacía para tus medidas de laboratorio.
+- material/preguntas-originales.txt: copia íntegra del TXT, sin modificar.
+- material/Lab2_CPUPipeline.pdf: enunciado original intacto.
+- material/lab1/: código fuente y scripts originales. No se incluye el ejecutable precompilado porque no es portable ni necesario para estudiar.
+- material/lab2/: los tres ASM originales.
+
+REVISIÓN DEL MATERIAL
+Los ZIP no incluyen medidas finales de los experimentos: la carpeta output de lab1 está vacía y lab2 contiene enunciado/código. No se han ejecutado los scripts del clúster ni generado cifras de simulación. La guía diferencia parámetros documentados, valores deducidos, ejemplos ideales y métricas pendientes.
+
+El TXT contiene 65 parejas de preguntas/respuestas. Se han quitado encabezados y saltos de línea de paginación y restaurado algunos exponentes para facilitar la lectura. El original íntegro está en material. Se conserva la respuesta 65 original y se señala su error: tras restar 8 al puntero, la dirección anterior requiere +8 de desplazamiento. El dato 0,38 de la pregunta 64 depende de diapositivas no adjuntas y no se ha podido verificar.
+
+El PDF atribuye el material a David Expósito Singh y muestra licencia CC BY-NC-SA. El resumen del lab2 es una adaptación de estudio con la misma atribución y condición CC BY-NC-SA. Las fuentes técnicas complementarias están enlazadas en la web y el resumen.
